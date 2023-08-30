@@ -24,4 +24,5 @@ waitress==2.1.2
 gunicorn
 pickle-mixin
 streamlit
+plotly-express
 -e .
