@@ -4,7 +4,7 @@ import pandas as pd
 from mlProject.logger import logging
 from mlProject.exception import CensusException
 import os,sys
-from mlProject.constants import mongo_client
+from mlProject.constant import mongo_client
 import numpy as np
 import dill
 import yaml
