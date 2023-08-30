@@ -42,14 +42,14 @@ class DataIngestionConfig:
             raise CensusException(e,sys)
 
 
-# class DataTrasformationConfig:
-#     def __init__(self,training_pipeline_config:TrainingPipelineConfig):
-#         #Below code will create a file with name "data_transformation in artifact folder
-#         self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir,"data_transformation")
-#         self.transform_object_path = os.path.join(self.data_transformation_dir,"transformer",TRANSFORMER_OBJECT_FILE_NAME)
-#         self.transformed_train_path = os.path.join(self.data_transformation_dir,TRAIN_FILE_NAME.replace("csv","npz"))
-#         self.transformed_test_path = os.path.join(self.data_transformation_dir,TEST_FILE_NAME.replace("csv","npz"))
-#         self.target_encoder_path = os.path.join(self.data_transformation_dir,"target_encoder",TARGET_ENCODER_OBJECT_FILE_NAME)
+class DataTrasformationConfig:
+    def __init__(self,training_pipeline_config:TrainingPipelineConfig):
+        #Below code will create a file with name "data_transformation in artifact folder
+        self.data_transformation_dir = os.path.join(training_pipeline_config.artifact_dir,"data_transformation")
+        self.transform_object_path = os.path.join(self.data_transformation_dir,"transformer",TRANSFORMER_OBJECT_FILE_NAME)
+        self.transformed_train_path = os.path.join(self.data_transformation_dir,TRAIN_FILE_NAME.replace("csv","npz"))
+        self.transformed_test_path = os.path.join(self.data_transformation_dir,TEST_FILE_NAME.replace("csv","npz"))
+        self.target_encoder_path = os.path.join(self.data_transformation_dir,"target_encoder",TARGET_ENCODER_OBJECT_FILE_NAME)
 
 
 
