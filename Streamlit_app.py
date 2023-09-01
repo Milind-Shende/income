@@ -10,9 +10,9 @@ ROOT_DIR = os.getcwd()
 SAVED_DIR_PATH = "saved_models"
 SAVED_ZERO_FILE="0"
 MODEL_FILE_DIR ="model"
-MODEL_FILE_NAME = "model.pkl"
+MODEL_FILE_NAME = "model1.joblib"
 TRANSFORMER_FILE_DIR="transformer"
-TRANSFORMER_FILE_NAME="transformer.pkl"
+TRANSFORMER_FILE_NAME="transformer1.joblib"
 # TARGET_ENCODER_FILE_DIR="target_encoder"
 # TARGET_ENCODER_FILE_NAME="target_encoder.pkl"
 
@@ -26,9 +26,11 @@ TRANSFORMER_DIR= os.path.join(ROOT_DIR, SAVED_DIR_PATH,SAVED_ZERO_FILE,TRANSFORM
 # print("TARGET_ENCODER_PATH:-",TARGET_ENCODER_DIR)
 
 # Load the Model.pkl, Transformer.pkl and Target.pkl
-model=pickle.load(open(MODEL_DIR,"rb"))
+# model=pickle.load(open(MODEL_DIR,"rb"))
+model=joblib.load(MODEL_DIR)
 # print(model)
-transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
+# transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
+transfomer=joblib.load(TRANSFORMER_DIR)
 # print(transfomer)
 
 #Read dataset
@@ -62,6 +64,7 @@ def about_page():
 
 def visualization_page():
 
+    st.title("**Machine Learning Approach:** :bar_chart:")
     # Create a simple bar chart using Plotly Express
     fig1 = px.pie(df, names='education', title='Pie Chart Of Education & Salary', color='education', color_discrete_sequence=px.colors.qualitative.Plotly)
 
@@ -175,8 +178,8 @@ def prediction_page():
         # Make the prediction using the loaded model
         prediction = model.predict(input_arr)
         st.subheader('Prediction')
-        prediction_text = ">50K" if prediction[0] == 1 else "<=50K"
-        st.write(f'The predicted Salary is: {prediction_text}')
+        prediction_text = "greater than 50,000K" if prediction[0] == 1 else "less than equal to 50,000K"
+        st.write(f'The predicted Salary is {prediction_text}')
 
 def image():
     # Load and display the Nigerian flag image
