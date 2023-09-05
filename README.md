@@ -1,4 +1,2 @@
-# income
-
-# Annual Income Prediction
+# &#128176Annual Income Prediction
 
