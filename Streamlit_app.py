@@ -156,7 +156,7 @@ def prediction_page():
         # Convert input data to a Pandas DataFrame
         input_df = pd.DataFrame(input_data)
         # Perform the transformation using the loaded transformer
-        transformed_data = transformer.transform(input_df)
+        transformed_data = transfomer.transform(input_df)
         # Reshape the transformed data as a NumPy array
         input_arr = np.array(transformed_data)
         
