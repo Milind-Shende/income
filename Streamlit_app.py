@@ -12,9 +12,9 @@ ROOT_DIR = os.getcwd()
 SAVED_DIR_PATH = "saved_models"
 SAVED_ZERO_FILE="0"
 MODEL_FILE_DIR ="model"
-MODEL_FILE_NAME = "model.pkl"
+MODEL_FILE_NAME = "model.joblib"
 TRANSFORMER_FILE_DIR="transformer"
-TRANSFORMER_FILE_NAME="transformer.pkl"
+TRANSFORMER_FILE_NAME="transformer.joblib"
 # TARGET_ENCODER_FILE_DIR="target_encoder"
 # TARGET_ENCODER_FILE_NAME="target_encoder.pkl"
 
@@ -28,11 +28,11 @@ TRANSFORMER_DIR= os.path.join(ROOT_DIR, SAVED_DIR_PATH,SAVED_ZERO_FILE,TRANSFORM
 # print("TARGET_ENCODER_PATH:-",TARGET_ENCODER_DIR)
 
 # Load the Model.pkl, Transformer.pkl and Target.pkl
-model=pickle.load(open(MODEL_DIR,"rb"))
-# model=joblib.load(MODEL_DIR)
+# model=pickle.load(open(MODEL_DIR,"rb"))
+model=joblib.load(MODEL_DIR)
 # print(model)
-transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
-# transfomer=joblib.load(TRANSFORMER_DIR)
+# transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
+transfomer=joblib.load(TRANSFORMER_DIR)
 # print(transfomer)
 
 #Read dataset
@@ -184,6 +184,7 @@ pages = {
 
 # Streamlit application
 def main():
+    st.cache.clear() 
     # Sidebar navigation
     st.sidebar.title('Navigation')
     selected_page = st.sidebar.radio('Go to', list(pages.keys()))
