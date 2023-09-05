@@ -29,18 +29,11 @@ TRANSFORMER_DIR= os.path.join(ROOT_DIR, SAVED_DIR_PATH,SAVED_ZERO_FILE,TRANSFORM
 
 # # Load the Model.pkl, Transformer.pkl and Target.pkl
 # # model=pickle.load(open(MODEL_DIR,"rb"))
-# model=joblib.load(MODEL_DIR)
+model=joblib.load(MODEL_DIR)
 # # print(model)
 # # transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
-# transfomer=joblib.load(TRANSFORMER_DIR)
+transfomer=joblib.load(TRANSFORMER_DIR)
 # # print(transfomer)
-
-
-def load_model():
-    # Load the Model.pkl, Transformer.pkl, and Target.pkl
-    model = joblib.load(MODEL_DIR)
-    transformer = joblib.load(TRANSFORMER_DIR)
-    return model, transformer
 
 #Read dataset
 df = pd.read_csv("https://github.com/Milind-Shende/census/raw/main/census.csv")
@@ -163,7 +156,7 @@ def prediction_page():
         # Convert input data to a Pandas DataFrame
         input_df = pd.DataFrame(input_data)
         # Perform the transformation using the loaded transformer
-        transformed_data = transfomer.transform(input_df)
+        transformed_data = transformer.transform(input_df)
         # Reshape the transformed data as a NumPy array
         input_arr = np.array(transformed_data)
         
