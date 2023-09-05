@@ -35,7 +35,7 @@ TRANSFORMER_DIR= os.path.join(ROOT_DIR, SAVED_DIR_PATH,SAVED_ZERO_FILE,TRANSFORM
 # transfomer=joblib.load(TRANSFORMER_DIR)
 # # print(transfomer)
 
-@st.cache(version=2)
+@st.cache
 def load_model():
     # Load the Model.pkl, Transformer.pkl, and Target.pkl
     model = joblib.load(MODEL_DIR)
