@@ -5,14 +5,16 @@ import pandas as pd
 import numpy as np
 import joblib
 import plotly.express as px
+import matplotlib.pyplot as plt
+
 
 ROOT_DIR = os.getcwd()
 SAVED_DIR_PATH = "saved_models"
 SAVED_ZERO_FILE="0"
 MODEL_FILE_DIR ="model"
-MODEL_FILE_NAME = "model1.joblib"
+MODEL_FILE_NAME = "model.pkl"
 TRANSFORMER_FILE_DIR="transformer"
-TRANSFORMER_FILE_NAME="transformer1.joblib"
+TRANSFORMER_FILE_NAME="transformer.pkl"
 # TARGET_ENCODER_FILE_DIR="target_encoder"
 # TARGET_ENCODER_FILE_NAME="target_encoder.pkl"
 
@@ -26,11 +28,11 @@ TRANSFORMER_DIR= os.path.join(ROOT_DIR, SAVED_DIR_PATH,SAVED_ZERO_FILE,TRANSFORM
 # print("TARGET_ENCODER_PATH:-",TARGET_ENCODER_DIR)
 
 # Load the Model.pkl, Transformer.pkl and Target.pkl
-# model=pickle.load(open(MODEL_DIR,"rb"))
-model=joblib.load(MODEL_DIR)
+model=pickle.load(open(MODEL_DIR,"rb"))
+# model=joblib.load(MODEL_DIR)
 # print(model)
-# transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
-transfomer=joblib.load(TRANSFORMER_DIR)
+transfomer=pickle.load(open(TRANSFORMER_DIR,"rb"))
+# transfomer=joblib.load(TRANSFORMER_DIR)
 # print(transfomer)
 
 #Read dataset
@@ -92,27 +94,14 @@ def visualization_page():
     with col4:
         st.plotly_chart(fig4, use_container_width=True)
 
-    # # fig5 = px.bar(df, x='occupation', y='salary', title='Sample Bar Chart',height=300, width=400)
+    # Create a crosstab and display a Matplotlib bar plot
+    crosstb = pd.crosstab(df.age, df.salary)
+    fig5, ax = plt.subplots(figsize=(15, 6))
+    crosstb.plot.bar(ax=ax, rot=0)
+    plt.xticks(rotation=90)
 
-    # # fig6 = px.bar(df, x='sex', y='salary', title='Sample Bar Chart',height=300, width=400)
-
-    # # # Display the chart using st.plotly_chart
-    # # col5, col6 = st.columns(2)
-
-    # # with col5:
-    # #     st.plotly_chart(fig5, use_container_width=True)
-
-    # # with col6:
-    # #     st.plotly_chart(fig6, use_container_width=True)
-
-    # fig3 = px.line(df, x='salary', y=['capital_gain', 'capital_loss'], title='Sample Bar Chart')
-
-    # # Display the chart using st.plotly_chart
-    # st.plotly_chart(fig3, use_container_width=True)
-
-
-
-
+    # Display the Matplotlib bar plot using st.pyplot
+    st.pyplot(fig5)
 
 
 def author_page():
@@ -142,9 +131,6 @@ def prediction_page():
     capital_loss = st.number_input('Capital Loss', min_value=0, max_value=4356, value=0, step=1)
     hours_per_week = st.number_input('Hours Per Week', min_value=0, max_value=99, value=40, step=1) 
     country = st.selectbox('Country', ('United-States', 'Other-States'))
-    
-
-    
     
      
     # Prediction button
@@ -186,8 +172,6 @@ def image():
     image_url = "https://github.com/Milind-Shende/census/blob/main/Income-PNG-Free-Download.png?raw=true"
     image_width = 200
     st.sidebar.image(image_url, width=image_width)
-
-
 
 
 # Create a dictionary with page names and their corresponding functions

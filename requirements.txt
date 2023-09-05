@@ -25,4 +25,5 @@ gunicorn
 pickle-mixin
 streamlit
 plotly-express
+matplotlib
 -e .
