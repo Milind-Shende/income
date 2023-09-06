@@ -22,9 +22,11 @@
 
 #Deployed on web using AWS url:- https://income-24.streamlit.app/
 
-# ![image](https://github.com/Milind-Shende/income/assets/103568452/de07c100-7692-42cc-987a-8f80c5b8f5e7) YouTube Link:- https://youtu.be/ReVC2LN0-VQ
+# ![image](https://github.com/Milind-Shende/income/assets/103568452/de07c100-7692-42cc-987a-8f80c5b8f5e7)  YouTube
 
-#YouTube
+**YouTube Link:-** https://youtu.be/ReVC2LN0-VQ
+
+
 
 ## Author✍
 
