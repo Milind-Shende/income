@@ -18,11 +18,17 @@
 
 **Education:** Developing such an application can serve as an educational tool for data science and machine learning enthusiasts. You can use it as a personal or team project to gain experience in building predictive models, working with real-world data, and deploying applications.
 
+# ⚙️ WorkFlow
+(https://drive.google.com/file/d/1QXOH2JAubJQDv6sD3iFF-Mg4racbVNqp/view?usp=drive_link)
+
+# [WorkFlow](https://drive.google.com/file/d/1n8vam1kytH6UlLNNdrBP09G7jrcOCAbZ/view?usp=drive_link)
+
+
 # ⚡ Deployment
 
 #Deployed on web using AWS url:- https://income-24.streamlit.app/
 
-# ![image](https://github.com/Milind-Shende/income/assets/103568452/de07c100-7692-42cc-987a-8f80c5b8f5e7)  YouTube
+# ![image](https://github.com/Milind-Shende/income/assets/103568452/de07c100-7692-42cc-987a-8f80c5b8f5e7)
 
 **YouTube Link:-** https://youtu.be/ReVC2LN0-VQ
 
