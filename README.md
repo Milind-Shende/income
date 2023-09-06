@@ -19,11 +19,8 @@
 **Education:** Developing such an application can serve as an educational tool for data science and machine learning enthusiasts. You can use it as a personal or team project to gain experience in building predictive models, working with real-world data, and deploying applications.
 
 # ⚙️ WorkFlow
-(https://drive.google.com/file/d/1QXOH2JAubJQDv6sD3iFF-Mg4racbVNqp/view?usp=drive_link)
-
 
 ![WrokFlow](https://github.com/Milind-Shende/income/assets/103568452/a4cb7dc2-ccdb-4b53-9ee7-68ce639860a7)
-
 
 # ⚡ Deployment
 
@@ -32,8 +29,6 @@
 # 📹YouTube
 
 **YouTube Link:-** https://youtu.be/ReVC2LN0-VQ
-
-
 
 ## Author✍
 
