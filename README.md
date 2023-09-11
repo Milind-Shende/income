@@ -24,7 +24,7 @@
 
 # ⚡ Deployment
 
-**Deployed on web using AWS url:-** https://income-24.streamlit.app/
+**Deployed on web using AWS url:-** [https://income-24.streamlit.app/](https://income24.streamlit.app/)
 
 # 📹YouTube
 
